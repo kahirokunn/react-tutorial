@@ -1,24 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [count, setCount] = useState(0)
+  if (count === 3) {
+    return (
+      <div className="App">
+        <img src="https://3.bp.blogspot.com/-R5ZeHGZD0fM/WHG2J2c1t5I/AAAAAAABA_c/l72QBLocVXI9_Zu2pQgV1OKfe0FK-zPYgCLcB/s800/hengao.png" alt="変顔" />
+        <div className="jokeText">さーーん</div>
+      </div>
+    );
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={() => setCount(count + 1)}>{"押せ！".repeat(count + 1)}</button>
+      {count > 0 && <div>{count}</div>}
     </div>
   );
 }

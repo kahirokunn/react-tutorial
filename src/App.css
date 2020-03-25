@@ -36,3 +36,54 @@
     transform: rotate(360deg);
   }
 }
+
+.jokeText {
+  top: 40%;
+  position: absolute;
+  display: inline-block;
+  color: #ACB6E5;
+  background: -webkit-linear-gradient(0deg, #ACB6E5, #86FDE8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: jokeTextAnimation 2s linear infinite;
+}
+
+img {
+  animation: boundAnimation 1s ease-in infinite;
+}
+
+@keyframes jokeTextAnimation {
+  0% {
+    left: 50%;
+    transform: rotate(0deg);
+    font-size: 10px;
+  }
+  50% {
+    left: 25%;
+    transform: rotate(360deg);
+    font-size: 150px;
+  }
+  100% {
+    left: 50%;
+    transform: rotate(720deg);
+    font-size: 10px;
+  }
+}
+
+@keyframes boundAnimation {
+  from {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.15);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  75% {
+    transform: scale(1.05);
+  }
+  to {
+    transform: scale(1);
+  }
+}
